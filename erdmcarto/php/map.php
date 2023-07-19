@@ -208,7 +208,10 @@ if (isset($_GET['clv'])) {
                   No hay imágenes
                 </div>
             <?php
-              }
+              } ?>
+              <a class="list-group-item list-group-item-action list-group-item-light p-3" target="_blank" href="https://gallant-driscoll.198-71-62-113.plesk.page/implementta/modulos/recorrido/files/">
+              <i class="fa-solid fa-vr-cardboard fa-beat"></i> Recorrido virtual</a>
+                  <?php
             }
             ?>
         <?php
