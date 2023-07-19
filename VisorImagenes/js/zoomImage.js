@@ -44,6 +44,8 @@ document.addEventListener('mousemove', function (e) {
 /* Llamamos a la función inertiaScroll para aplicar el efecto inercial */
 // document.addEventListener('mouseup', inertiaScroll);
 document.addEventListener('mouseup');
+var initialWidth; // Variable para almacenar el ancho inicial de la imagen
+
 function zoomIn() {
   var imagen = document.getElementById("image");
   var currentWidth = imagen.offsetWidth;
@@ -53,5 +55,12 @@ function zoomIn() {
 function zoomOut() {
   var imagen = document.getElementById("image");
   var currentWidth = imagen.offsetWidth;
-  imagen.style.width = currentWidth / 1.2 + "px";
+
+  if (!initialWidth) {
+    initialWidth = currentWidth;
+  }
+
+  if (currentWidth >= initialWidth) {
+    imagen.style.width = currentWidth / 1 + "px";
+  }
 }
