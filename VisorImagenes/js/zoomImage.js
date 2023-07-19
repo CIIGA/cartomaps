@@ -1,26 +1,49 @@
-var container = document.getElementById("container");
-var image = document.getElementById("image");
+var container = document.getElementById('container');
+var image = document.getElementById('image');
+var isDragging = false;
+var startX, startY, currentX, currentY;
+var deltaX = 0;
+var deltaY = 0;
+var friction = 0.95; /* Ajusta el valor para controlar la "inercia" del arrastre */
 
-container.addEventListener("mousemove", function (event) {
-  var containerRect = container.getBoundingClientRect();
-  var x = event.clientX - containerRect.left;
-  var y = event.clientY - containerRect.top;
-
-  var offsetX = (container.offsetWidth - image.offsetWidth) / 2;
-  var offsetY = (container.offsetHeight - image.offsetHeight) / 2;
-
-  var translateX =
-    ((container.offsetWidth / 2 - x) / container.offsetWidth) * 100;
-  var translateY =
-    ((container.offsetHeight / 2 - y) / container.offsetHeight) * 100;
-
-  image.style.transform =
-    "translate(" + translateX + "%, " + translateY + "%) scale(2)";
+container.addEventListener('mousedown', function (e) {
+  isDragging = true;
+  startX = e.clientX - deltaX;
+  startY = e.clientY - deltaY;
+  container.style.cursor = 'grabbing';
+  image.style.transition = 'none';
 });
 
-container.addEventListener("mouseleave", function () {
-  image.style.transform = "translate(0%, 0%) scale(1)";
+document.addEventListener('mouseup', function () {
+  isDragging = false;
+  container.style.cursor = 'grab';
 });
+
+document.addEventListener('mousemove', function (e) {
+  if (isDragging) {
+    e.preventDefault();
+    currentX = e.clientX;
+    currentY = e.clientY;
+    deltaX = currentX - startX;
+    deltaY = currentY - startY;
+
+    image.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+  }
+});
+
+/* Función para aplicar la "inercia" del arrastre */
+// function inertiaScroll() {
+//   if (!isDragging && (Math.abs(deltaX) > 1 || Math.abs(deltaY) > 1)) {
+//     deltaX *= friction;
+//     deltaY *= friction;
+//     image.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+//     requestAnimationFrame(inertiaScroll);
+//   }
+// }
+
+/* Llamamos a la función inertiaScroll para aplicar el efecto inercial */
+// document.addEventListener('mouseup', inertiaScroll);
+document.addEventListener('mouseup');
 function zoomIn() {
   var imagen = document.getElementById("image");
   var currentWidth = imagen.offsetWidth;

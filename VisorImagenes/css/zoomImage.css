@@ -1,3 +1,34 @@
+/* Animación para el efecto de timbre o sonido */
+@keyframes sonar {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(10deg);
+  }
+  30% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  60% {
+    transform: rotate(5deg);
+  }
+  70% {
+    transform: rotate(0deg);
+  }
+  80% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
 #image {
   width: 100%;
   height: 100%;
@@ -22,9 +53,82 @@
   border-radius: 3px;
   cursor: pointer;
 }
-body{
+body {
   background-image: url(../img/icons/back.jpg);
   background-repeat: no-repeat;
   background-size: 1366px;
-  
 }
+
+.slide:hover,
+.slide:focus {
+  box-shadow: inset 10.5em 0 0 0 var(--hover);
+}
+
+.slide {
+  --color: #6d6a6a;
+  --hover: #f6f6f6;
+}
+
+button.slide {
+  color: var(--color);
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+button.slide {
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+  border-radius: 7%;
+  font-weight: bold;
+  text-align: center;
+  text-size-adjust: 10px;
+}
+
+button {
+  color: var(--color);
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+button:hover,
+button:focus {
+  border-color: var(--hover);
+  color: #000000;
+}
+
+/* Estilos para el ícono */
+.btn i {
+  font-size: 20px;
+  transition: color 0.2s; /* Transición suave para el cambio de color */
+}
+
+.btn:hover i {
+  color: #16c7ff; /* Color del ícono al pasar el cursor */
+  animation: sonar ease-in-out 0.5s 1 alternate; /* Aplicar la animación al pasar el cursor */
+}
+
+.page-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+#container {
+  position: relative;
+  overflow: hidden;
+  cursor: grab;
+}
+#image {
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+  transition: transform 0.2s ease-out;/* Agregamos transición para el efecto inercial*/
+}
+
+
+

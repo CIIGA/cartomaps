@@ -1,3 +1,6 @@
+<?php
+// $cuenta = $_GET['cta'];
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -11,6 +14,9 @@
   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet" />
   <link href="css/index.css" rel="stylesheet" />
   <link href="css/zoomImage.css" rel="stylesheet" />
+  <style>
+   
+  </style>
 </head>
 
 <body>
@@ -28,39 +34,7 @@
           </div>
         </div>
         <!-- Siderbar Menu  -->
-        <div class="sidebar-menu">
-          <ul>
-            <li class="header-menu">
-              <span style="font-weight:normal;">Datos del propietario</span>
-              <span class="data-propietario" style="font-weight:normal;">Cuenta: 101-20-535-13-00-0000</span>
-              <span class="data-propietario" style="font-weight:normal;">Propietario: RUIZ ESTRADA ZOYLA</span>
-            </li>
-            <hr />
-            <li>
-              <a href="" id="div-btn1">
-                <i class="fa fa-camera"></i>
-                <span>Foto 1</span>
-              </a>
-            </li>
-            <li>
-              <a href="" id="div-btn2">
-                <i class="fa fa-camera"></i>
-                <span>Foto 2</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" id="div-btn3">
-                <i class="fa fa-camera"></i>
-                <span>Foto 3</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" id="div-btn4">
-                <i class="fa fa-camera"></i>
-                <span>Foto 4</span>
-              </a>
-            </li>
-          </ul>
+        <div id="contenedor-botones">
         </div>
         <!-- sidebar-menu  -->
       </div>
@@ -68,7 +42,8 @@
     <!-- sidebar-wrapper  -->
     <div class="page-content">
       <div class="container-fluid" id="container">
-        <img id="image" src="img/101-20-216-08-00-0000_Oblcompleta_1.png" alt="Imagen" />
+        <img id="image" src="" alt="Imagen" 
+        draggable="false"/>
         <div id="floating-div">
           <button onclick="zoomIn()" id="zoom-in"> <span class="	fas fa-plus"></span> </button>
           <button onclick="zoomOut()" id="zoom-out"> <span class="	fas fa-minus"></span></button>
@@ -83,9 +58,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="js/index.js"></script>
   <script src="js/zoomImage.js"></script>
-  <script src="js/remplaceImage.js"></script>
+  <script src="js/searchCuenta.js"></script>
 </body>
 
 </html>
