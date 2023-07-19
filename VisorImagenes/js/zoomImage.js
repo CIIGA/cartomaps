@@ -61,6 +61,6 @@ function zoomOut() {
   }
 
   if (currentWidth >= initialWidth) {
-    imagen.style.width = currentWidth / 1 + "px";
+    imagen.style.width = currentWidth / 1.2 + "px";
   }
 }
