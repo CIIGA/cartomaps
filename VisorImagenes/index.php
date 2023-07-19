@@ -28,7 +28,7 @@
       <div class="sidebar-content">
         <div class="sidebar-brand">
           <!-- <a href="">Stratimex</a> -->
-          <img class="logo" width="210px" height="55px" src="img/icons/startimex_logo_Sombra.png" />
+          <img class="logo" width="200px" height="100px" src="img/icons/logoBottonFIDI.png" />
           <div id="close-sidebar">
             <i class="fas fa-times"></i>
           </div>
