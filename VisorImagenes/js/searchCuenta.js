@@ -59,7 +59,7 @@ function generarBoton(url, indice) {
 
   // Crear el elemento <button> y agregar las clases correspondientes
   const btn = document.createElement('button');
-  btn.classList.add('btn', 'slide','swing-animation');
+  btn.classList.add('btn', 'photos','swing-animation');
   btn.textContent = `Imagen ${indice}`;
   // Crear el elemento <i> para el ícono y agregar las clases
   const icono = document.createElement('i');

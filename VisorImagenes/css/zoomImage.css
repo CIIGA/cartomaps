@@ -92,7 +92,7 @@ body {
   background-size: 1366px;
 }
 
-.slide:hover,
+/* .slide:hover,
 .slide:focus {
   box-shadow: inset 10.5em 0 0 0 var(--hover);
 }
@@ -117,24 +117,52 @@ button.slide {
   font-weight: bold;
   text-align: center;
   text-size-adjust: 10px;
+} */
+
+.photos {
+  --color: #6d6a6a;
+  --hover: #f6f6f6;
+}
+
+button.photos {
+  background: none;
+  border: none;
+  font: inherit;
+  margin: 0.5em;
+  padding: .5em 2em;
+  font-weight: bold;
+  text-align: center;
+  text-size-adjust: 10px;
 }
 
 button {
-  color: var(--color);
+  /* color: var(--color);
   -webkit-transition: 0.25s;
-  transition: 0.25s;
+  transition: 0.25s; */
+  background: none;
+  border: none;
+  font: inherit;
+  margin: 2em;
+  padding: 1em 2em;
+  font-weight: bold;
+  text-align: center;
+  text-size-adjust: 10px;
+  color: #6d6a6a;
 }
 
 button:hover,
 button:focus {
-  border-color: var(--hover);
-  color: #000000;
+  /* border-color: var(--hover); */
+  color: #f6efef;
 }
 
 /* Estilos para el ícono */
 .btn i {
   font-size: 20px;
   transition: color 0.2s; /* Transición suave para el cambio de color */
+  position: absolute;
+  left: 8px;
+  padding: 2px;
 }
 
 .btn:hover i {
