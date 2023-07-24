@@ -9,7 +9,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Fidi</title>
-  <link rel="icon" href="img/icons/logoBottonFIDI.png">
+  <link rel="icon" href="img/icons/logoFIDI.png">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet" />
   <link href="css/index.css" rel="stylesheet" />
@@ -28,7 +28,7 @@
       <div class="sidebar-content">
         <div class="sidebar-brand">
           <!-- <a href="">Stratimex</a> -->
-          <img class="logo" width="200px" height="100px" src="img/icons/logoBottonFIDI.png" />
+          <img class="logo" width="150px" height="100px" src="img/icons/logoFIDI.png" />
           <div id="close-sidebar">
             <i class="fas fa-times"></i>
           </div>
