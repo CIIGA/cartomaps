@@ -3,7 +3,7 @@ require "../../acnxerdm/cnx.php";
 
 
     $Acue="select * from nuevaCActuales";
-//    $Acue="select * from cuentasZap_09062023_1341";
+//    $Acue="select * from nuevaCActuales where cuentaPredial = '1114184967'";
     $Acuenta=sqlsrv_query($cnx,$Acue);
     $AcuentasActuales=sqlsrv_fetch_array($Acuenta);
 

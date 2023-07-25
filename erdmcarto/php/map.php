@@ -208,14 +208,15 @@ if (isset($_GET['clv'])) {
                   No hay imágenes
                 </div>
             <?php
-              } if($buscar=='101-20-535-13-00-0000'){?>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" target="_blank" href="https://gallant-driscoll.198-71-62-113.plesk.page/implementta/modulos/recorrido/files/">
-                <i class="fa-solid fa-vr-cardboard fa-beat"></i> Recorrido virtual</a>
+              } 
+              if($buscar=='101-20-535-13-00-0000'){?>
+                <!-- <a class="list-group-item list-group-item-action list-group-item-light p-3" target="_blank" href="https://gallant-driscoll.198-71-62-113.plesk.page/implementta/modulos/recorrido/files/">
+                <i class="fa-solid fa-vr-cardboard fa-beat"></i> Recorrido virtual</a> -->
                     <?php
                 }
                 if($buscar=='101-20-537-01-00-0000'){?>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" target="_blank" href="https://gallant-driscoll.198-71-62-113.plesk.page/implementta/modulos/recorrido190723/files/">
-                <i class="fa-solid fa-vr-cardboard fa-beat"></i> Recorrido virtual</a>
+                <!-- <a class="list-group-item list-group-item-action list-group-item-light p-3" target="_blank" href="https://gallant-driscoll.198-71-62-113.plesk.page/implementta/modulos/recorrido190723/files/">
+                <i class="fa-solid fa-vr-cardboard fa-beat"></i> Recorrido virtual</a> -->
                     <?php
                 }
                   
