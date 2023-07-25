@@ -59,22 +59,40 @@ function generarBoton(url, indice) {
 
   // Crear el elemento <button> y agregar las clases correspondientes
   const btn = document.createElement('button');
-  btn.classList.add('btn', 'slide','swing-animation');
+  btn.classList.add('btn', 'photos', 'swing-animation');
   btn.textContent = `Imagen ${indice}`;
   // Crear el elemento <i> para el ícono y agregar las clases
   const icono = document.createElement('i');
-  icono.classList.add('fa', 'fa-camera','p-1');
+  icono.classList.add('fa', 'fa-camera', 'p-1');
   btn.appendChild(icono);
 
   // Agregar el evento de clic al botón
   btn.addEventListener('click', function () {
+    // Mostrar el mensaje de carga con SweetAlert2
+    Swal.fire({
+      title: 'Obteniendo imagen',
+      html: 'Espere un momento por favor...',
+      timer: 0,
+      timerProgressBar: true,
+      allowEscapeKey: false,
+      allowOutsideClick: false,
+      didOpen: () => {
+        Swal.showLoading();
+      }
+    });
     cambiarImagen(url);
   });
 
   // Agregar el botón al contenedor de botones
   contenedorBotones.appendChild(btn);
 }
+
 function cambiarImagen(rutaImagen) {
   var image = document.getElementById('image');
-  image.src = rutaImagen;
+  // Simulación de tiempo de carga 
+  setTimeout(function () {
+    image.src = rutaImagen;
+    // Cerrar SweetAlert2 cuando termine de cargar la imagen
+    Swal.close();
+  }, 1500); // Tiempo de carga simulado (en milisegundos)
 }
