@@ -233,33 +233,25 @@ if(isset($Ad['estado']) and $Ad['estado'] == 1){ ?>
     <!--********************************INICIO NAVBAR***************************************************************-->
 
     <br>
-<!--
     <nav class="navbar navbar-expand-lg navbar-light">
-        <a href="#"><img src="../img/logoImplementtaHorizontal.png" width="250" height="82" alt=""></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a class="nav-item nav-link" href="../"> Inicio </a>
-
-                <a class="nav-item nav-link" href="https://gallant-driscoll.198-71-62-113.plesk.page/implementta/modulos/Administrador/logout.php"> Salir <i class="fas fa-sign-out-alt"></i></a>
-
-            </ul>
-
-            <form class="form-inline my-2 my-lg-0">
-                <h6 style="text-shadow: 0px 0px 2px #717171;">
-
-
-
-                </h6>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </form>
-
-        </div>
-    </nav>
--->
+  <a href="acceso.php"><img src="../../img/logoFIDI.png" width="150" height="110" alt=""></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <?php if (isset($_SESSION['tipousuario'])) { ?>
+        <a class="nav-item nav-link" href="config.php">| <i class="fas fa-users-cog"></i> Administrador |</a>
+      <?php } ?>
+      <a class="nav-item nav-link" href="../../php/acceso.php">| Inicio |</a>
+      <?php if ((isset($_SESSION['fichas'])) and ($_SESSION['fichas'] == 3) or (isset($_SESSION['tipousuario']))) { ?>
+        <a class="nav-item nav-link" href="../../php/accesDoctos.php">| <i class="far fa-file-alt"></i> Documentos |</a>
+      <?php } ?>
+      <a class="nav-item nav-link" href="../../php/logout.php">| Salir <i class="fas fa-sign-out-alt"></i>|</a>
+    </ul>
+  </div>
+</nav>
         <?php //require '../../../include/implementtaNav1.php' ?>
     <!--*************************************NAVBAR*************************************************************-->
         
@@ -468,6 +460,26 @@ if(isset($Ad['estado']) and $Ad['estado'] == 1){ ?>
         </script>
     </body>
     <?php // require "../../../../include/footer.php" ?>
+    <!--*************************INICIO FOOTER***********************************************************************-->   
+    <nav class="navbar sticky-bottom navbar-expand-lg navbar-dark" style="background-color: #111111;">
+        <span class="navbar-text" style="font-size:12px;font-weigth:bold;color:#e3e3e3;">
+        Sistema FIDI<br>
+        Estrategas de México <i class="far fa-registered"></i><br>
+        Centro de Inteligencia Informática y Geografía Aplicada
+        <hr style="width:105%;border-color:#e3e3e3;">
+        Creado y diseñado por © <?php echo date('Y') ?> Estrategas de México<br>
+        </span><hr style="width:20%;">
+        <span class="navbar-text" style="font-size:12px;font-weigth:bold;color:#e3e3e3;">
+        </span>
+        <ul class="navbar-nav mr-auto">
+            <br><br><br><br><br><br><br><br>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <img src="../../img/logoBottonFIDI.png" width="220" height="130" alt="">
+            <img src="../../img/logoBotton.png" width="240" height="100" alt="">
+        </form>
+    </nav>
+    <!--***********************************FIN FOOTER****************************************************************-->  
 </html>
 
 <?php }else{ 
