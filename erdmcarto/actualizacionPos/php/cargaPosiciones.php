@@ -1,6 +1,15 @@
 <?php
 
 require_once('../lib/PhpSpreadsheet/vendor/autoload.php');
+$serverName = "51.222.44.135";
+$connectionInfo = array( 'Database'=>'cartomaps', 'UID'=>'sa', 'PWD'=>'vrSxHH3TdC');
+$cn1 = sqlsrv_connect($serverName, $connectionInfo);
+date_default_timezone_set('America/Mexico_City');
+    $c1 = $_GET['id_usuario'];
+    $c2 = "SELECT * FROM usuarionuevo
+  where id_usuarioNuevo='$c1'";
+    $admin1 = sqlsrv_query($cn1, $c2);
+    $Ad = sqlsrv_fetch_array($admin1);
 //    $serverName = "51.222.44.135";
 //    $connectionInfo = array( 'Database'=>'implementtaTijuanaP', 'UID'=>'sa', 'PWD'=>'vrSxHH3TdC');
 //    $cnx = sqlsrv_connect($serverName, $connectionInfo);
@@ -79,13 +88,13 @@ if(isset($_POST['actualiza']) ){
     }
     
     echo '<script>alert("Se actualizaron correctamente")</script>';
-    echo '<meta http-equiv="refresh" content="0,url=cargaPosiciones.php">';
+    echo '<meta http-equiv="refresh" content="0,url=cargaPosiciones.php?id_usuario='.$c1.'">';
 
 }
 
 if(isset($_POST['selectPlaza']) ){
     $plaza = $_POST['plz'];
-    echo '<meta http-equiv="refresh" content="0,url=cargaPosiciones.php?plaza='.$plaza.'">';
+    echo '<meta http-equiv="refresh" content="0,url=cargaPosiciones.php?plaza='.$plaza.'&id_usuario='.$c1.'">';
 }
 
 if(isset($_POST['cargaEx'])){
@@ -139,7 +148,7 @@ if(isset($_POST['cargaEx'])){
                 }
                 
                 if($plantilla == false){
-                    echo '<meta http-equiv="refresh" content="0,url=cargaPosiciones.php?errorPlantilla&plaza='.$plaza.'"';
+                    echo '<meta http-equiv="refresh" content="0,url=cargaPosiciones.php?errorPlantilla&plaza='.$plaza.'&id_usuario='.$c1.'"';
                 } else {
                     
                     sqlsrv_query( $cnx,"DELETE FROM PosicionesActualizar" );
@@ -190,23 +199,25 @@ if(isset($_POST['cargaEx'])){
                         if($row[0] != $rowTotal[0]){
                             //sqlsrv_query( $cnx,"DELETE FROM PosicionesActualizar" );
                             
-                            echo '<meta http-equiv="refresh" content="0,url=cargaPosiciones.php?count='.$row[0].'&errorCruze&plaza='.$plaza.'"';
+                            echo '<meta http-equiv="refresh" content="0,url=cargaPosiciones.php?count='.$row[0].'&errorCruze&plaza='.$plaza.'&id_usuario='.$c1.'"';
                         }
                     }
                     
-                echo '<meta http-equiv="refresh" content="0,url=cargaPosiciones.php?ok=1&count='.$row[0].'&plaza='.$plaza.'">';
+                echo '<meta http-equiv="refresh" content="0,url=cargaPosiciones.php?ok=1&count='.$row[0].'&plaza='.$plaza.'&id_usuario='.$c1.'">';
                                        
                 }
             }
         }else{
-            echo '<meta http-equiv="refresh" content="0,url=cargaPosiciones.php?errorFile&plaza='.$plaza.'">';
+            echo '<meta http-equiv="refresh" content="0,url=cargaPosiciones.php?errorFile&plaza='.$plaza.'&id_usuario='.$c1.'">';
         }
         
     }
     
     
 ?>
-<?php if(isset($_SESSION['rol']) and $_SESSION['rol'] == 1){ ?>
+<?php 
+
+if(isset($Ad['estado']) and $Ad['estado'] == 1){ ?>
 <html>
     <head>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
@@ -456,9 +467,9 @@ if(isset($_POST['cargaEx'])){
             
         </script>
     </body>
-    <?php// require "../../../../include/footer.php" ?>
+    <?php // require "../../../../include/footer.php" ?>
 </html>
 
 <?php }else{ 
-    header('location:../../login.php');
+    header('location:../../../login.php');
 } ?>
