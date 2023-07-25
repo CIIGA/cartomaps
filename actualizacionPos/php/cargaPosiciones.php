@@ -1,8 +1,6 @@
 <?php
 
 require_once('../lib/PhpSpreadsheet/vendor/autoload.php');
-
-
 //    $serverName = "51.222.44.135";
 //    $connectionInfo = array( 'Database'=>'implementtaTijuanaP', 'UID'=>'sa', 'PWD'=>'vrSxHH3TdC');
 //    $cnx = sqlsrv_connect($serverName, $connectionInfo);
