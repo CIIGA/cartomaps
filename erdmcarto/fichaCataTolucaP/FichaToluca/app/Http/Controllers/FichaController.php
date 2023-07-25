@@ -449,7 +449,9 @@ class FichaController extends Controller
                 $signedUrl='https://gallant-driscoll.198-71-62-113.plesk.page/cartomaps/erdmcarto/fichaCataTolucaP/FichaToluca/public/fichas/'.$nombreFile;
 
                      if ($count_nombreFile['count'] != 0) {
+                        if (file_exists($rutaGuardado)) {
                         unlink($rutaGuardado);
+                        }
                         file_put_contents($rutaGuardado, $output);
                         $ficha = "update doctoCreado set fecha='$fecha',hora='$hora',dia=' $dia',urlFile='$signedUrl' where nombreFile = '$nombreFile'";
                         //eliminar el documento en public
