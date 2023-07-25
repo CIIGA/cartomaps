@@ -19,7 +19,7 @@
         $admin1 = sqlsrv_query($cnx, $c2);
         $Ad = sqlsrv_fetch_array($admin1);
         if ($Ad['estado']==1) { ?>
-          <a class="nav-item nav-link" href="../actualizacionPos/php/cargaPosiciones.php?id_usuario=<?php echo $c1?>">| <i class="fa fa-map-marker"></i> Actualizacion de coordenadas |</a>
+          <a class="nav-item nav-link" href="../actualizacionPos/php/cargaPosiciones.php?id_usuario=<?php echo $c1?>">| <i class="fa fa-map-marker"></i> Coordenadas |</a>
       <?php }
       } ?>
       <a class="nav-item nav-link" href="acceso.php">| Inicio |</a>
