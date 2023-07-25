@@ -224,7 +224,7 @@ if(isset($Ad['estado']) and $Ad['estado'] == 1){ ?>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Actualizacion de Posiciones</title>
-
+        <link rel="icon" href="../../icono/icon.png">
         <!-- Bootstrap -->
         <link rel="stylesheet" href="../css/bootstrap.css">
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
