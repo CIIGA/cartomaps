@@ -160,6 +160,28 @@ if($_SESSION['admin'] == 1){
     
 <?php } while($acceso=sqlsrv_fetch_array($acces)); ?>
 </div>
+<div class="card-columns">
+
+<!-- local -->
+    
+    <div class="card">
+    <div class="container-a4">
+		<div class="caption-style-4">
+			<li>
+                <img class="card-img-top" src="../img/default.jpg" alt="Card image cap" height="200px">
+                <div class="caption">
+                    <a href="../fichaCataTolucaP/FichaTolucaP/public/index.php/index/15"> <div class="blur"></div></a>
+                </div>
+            </li>
+        </div>
+    </div>
+    <div class="card-body">
+      <h5 style="text-shadow: 0px 0px 2px #717171;text-align:center;" class="card-text">TolucaLocal</h5>
+    </div>
+  </div>
+    
+
+</div>
 <br><br><br>
 <?php } else{ ?>
     <br><br>

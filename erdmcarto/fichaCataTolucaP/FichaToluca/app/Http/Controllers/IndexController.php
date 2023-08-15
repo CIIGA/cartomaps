@@ -7,10 +7,10 @@ use Illuminate\Support\Facades\DB;
 
 class IndexController extends Controller
 {
-    public function index(){
+    public function index($id_documento){
        
-
-        return view('components.search');
+// dd($id_documento);
+        return view('components.search',['id_documento'=>$id_documento]);
     }
     public function show(Request $request)
     {
