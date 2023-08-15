@@ -205,7 +205,7 @@ do{
 //********************** execute ficha **************************************
 //if(isset($_GET['start'])){
     
-    $cPredialRep=$fichas['Cuenta_predial'];;
+    $cPredialRep=$fichas['Cuenta_predial'];
     
     $re="select * from fichaResult
     where CPredial='$cPredialRep'";
